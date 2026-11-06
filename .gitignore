@@ -17,6 +17,10 @@ r8.jar
 platform*.zip
 stubs.jar
 
+# local build scripts
+scripts/*.ps1
+*.ps1
+
 # editor/os noise
 .idea/
 .vscode/
