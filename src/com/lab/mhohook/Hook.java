@@ -17,12 +17,15 @@ import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 
 public final class Hook implements IXposedHookLoadPackage {
-    private static final String PKG = "com.garena.game.mho";
     private static final Set<String> HOOKED_METHODS = Collections.newSetFromMap(new ConcurrentHashMap<String, Boolean>());
+
+    private static boolean isTarget(String pkg) {
+        return "com.garena.game.mho".equals(pkg) || "com.tencent.mhadv".equals(pkg);
+    }
 
     @Override
     public void handleLoadPackage(LoadPackageParam lpparam) {
-        if (!PKG.equals(lpparam.packageName)) return;
+        if (!isTarget(lpparam.packageName)) return;
         XposedBridge.log("MHO Hook: loaded into " + lpparam.packageName + " [process: " + lpparam.processName + "]");
 
         spoofBuildFields();
