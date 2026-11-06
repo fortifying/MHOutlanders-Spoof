@@ -1,0 +1,26 @@
+# build output
+build/
+.deps/
+*.apk
+*.idsig
+classes/
+dex/
+
+# local signing material
+keystore/
+*.keystore
+*.jks
+
+# downloaded toolchain
+android.jar
+r8.jar
+platform*.zip
+stubs.jar
+
+# editor/os noise
+.idea/
+.vscode/
+*.iml
+.DS_Store
+Thumbs.db
+*.log

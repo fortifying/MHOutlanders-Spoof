@@ -1,0 +1,8 @@
+# Auto-detect text files and normalize line endings
+* text=auto
+
+# Ensure bash scripts and shell files always use LF
+*.sh text eol=lf
+scripts/* text eol=lf
+assets/xposed_init text eol=lf
+
